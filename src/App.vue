@@ -7,10 +7,10 @@
         class="music-vinyl"
         :class="{ spinning: isPlaying }"
         @click="toggleMusic"
-        :title="isPlaying ? '暂停音乐' : '播放音乐'"
+        :title="isPlaying ? '暫停音樂' : '播放音樂'"
       >
         <div class="music-cover">
-          <img src="/cover.jpg" alt="音乐封面" class="vinyl-img" />
+          <img src="/cover.jpg" alt="音樂封面" class="vinyl-img" />
           <el-icon class="vinyl-icon">
             <component :is="isPlaying ? MusicNoteOutlined : MusicOffOutlined" />
           </el-icon>
@@ -39,18 +39,18 @@
                 </el-button-group>
               </div>
             </template>
-            <!-- 资源 -->
+            <!-- 資源 -->
             <div class="resource-grid" v-show="activeCategory == 'resourceSys'">
               <div class="resource-item" v-for="(item, index) in resourcesData" :key="index">
                 <el-icon><AutoAwesomeOutlined /></el-icon>
                 <span>{{ item.name }}: {{ gameStore.formatNumber(gameStore.resources[index]) }}</span>
               </div>
             </div>
-            <!-- 信息 -->
+            <!-- 資訊 -->
             <div class="status-grid" v-show="activeCategory == 'cosmicInfo'">
               <div class="status-item">
                 <el-icon><WatchLaterOutlined /></el-icon>
-                <span>时间: {{ gameStore.formatTime(gameStore.gameTime) }}</span>
+                <span>時間: {{ gameStore.formatTime(gameStore.gameTime) }}</span>
               </div>
               <div class="status-item">
                 <el-icon><WifiChannelRound /></el-icon>
@@ -58,38 +58,38 @@
               </div>
               <div class="status-item">
                 <el-icon><TurnSharpLeftOutlined /></el-icon>
-                <span>熵减速率: {{ gameStore.entropyReductionRate }}</span>
+                <span>熵減速率: {{ gameStore.entropyReductionRate }}</span>
               </div>
               <div class="status-item">
                 <el-icon><TrendingUpOutlined /></el-icon>
-                <span>坐标暴露值上限: {{ gameStore.coordinateExposureMax }}</span>
+                <span>坐標暴露值上限: {{ gameStore.coordinateExposureMax }}</span>
               </div>
               <div class="status-item">
                 <el-icon><WebhookOutlined /></el-icon>
-                <span>文明等级: {{ gameStore.civilizationLevel }}</span>
+                <span>文明等級: {{ gameStore.civilizationLevel }}</span>
               </div>
               <div class="status-item">
                 <el-icon><SpokeOutlined /></el-icon>
-                <span>存续度: {{ civilizationSurvival.toFixed(2) }}</span>
+                <span>存續度: {{ civilizationSurvival.toFixed(2) }}</span>
               </div>
               <div
                 class="status-item"
                 :class="{ chaos: gameStore.universeState === 'chaos', order: gameStore.universeState === 'order' }"
               >
                 <el-icon><StreamOutlined /></el-icon>
-                <span>宇宙状态: {{ gameStore.universeState === 'chaos' ? '混沌态' : '有序态' }}</span>
+                <span>宇宙狀態: {{ gameStore.universeState === 'chaos' ? '混沌態' : '有序態' }}</span>
               </div>
             </div>
-            <!-- 监控 -->
+            <!-- 監控 -->
             <div class="jiankong" v-show="activeCategory == 'cosmicWatch'">
               <div class="universe-grid">
                 <div class="universe-item">
                   <h4>
-                    坐标暴露值
+                    坐標暴露值
                     <el-tooltip
                       class="box-item"
                       effect="dark"
-                      content="当文明等级>3并且暴露值超过上限会遭受到来自黑暗森林的降维打击(惩罚很严重)"
+                      content="當文明等級>3並且暴露值超過上限會遭受到來自黑暗森林的降維打擊(懲罰很嚴重)"
                       placement="top"
                     >
                       <el-icon><ErrorOutlineFilled /></el-icon>
@@ -118,11 +118,11 @@
                 </div>
                 <div class="universe-item">
                   <h4>
-                    三体偏差值
+                    三體偏差值
                     <el-tooltip
                       class="box-item"
                       effect="dark"
-                      content="当三体偏差值达到无限时这个世界会在受到不可抗力因素后毁灭, 完成终极文明后可以阻止"
+                      content="當三體偏差值達到無限時這個世界會在受到不可抗力因素後毀滅, 完成終極文明後可以阻止"
                       placement="top"
                     >
                       <el-icon><ErrorOutlineFilled /></el-icon>
@@ -138,7 +138,7 @@
               </div>
               <el-card class="grad-progress-card" shadow="never" style="margin-top: 20px">
                 <template #header>
-                  <span>毕业进度({{ (gameStore.progressRatio * 100).toFixed(1) }}%)</span>
+                  <span>畢業進度({{ (gameStore.progressRatio * 100).toFixed(1) }}%)</span>
                 </template>
                 <div class="grad-progress-list">
                   <el-descriptions :column="2" border>
@@ -149,17 +149,17 @@
                 </div>
               </el-card>
             </div>
-            <!-- 系统 -->
+            <!-- 系統 -->
             <div class="status-controls" v-show="activeCategory == 'entropyMgmt'">
               <el-button
                 @click="toggleGame"
                 :icon="gameRunning ? PauseCircleOutlineFilled : PlayCircleOutlineFilled"
                 class="status-controls-item main-action"
               >
-                {{ gameRunning ? '暂停游戏' : '继续游戏' }}
+                {{ gameRunning ? '暫停遊戲' : '繼續遊戲' }}
               </el-button>
               <el-button @click="resetGame" :icon="RefreshOutlined" class="status-controls-item secondary-action">
-                重置游戏
+                重設遊戲
               </el-button>
               <el-upload
                 class="button el-button status-controls-item secondary-action"
@@ -172,17 +172,17 @@
                 <el-icon>
                   <FileUploadOutlined />
                 </el-icon>
-                导入存档
+                導入存檔
               </el-upload>
               <el-button @click="download" :icon="FileDownloadOutlined" class="status-controls-item secondary-action">
-                导出存档
+                導出存檔
               </el-button>
               <el-button
                 @click="showHelp = true"
                 :icon="QuestionMarkOutlined"
                 class="status-controls-item secondary-action"
               >
-                游戏说明
+                遊戲說明
               </el-button>
               <el-tooltip effect="dark" content="QQ群: 920930589" placement="top">
                 <el-button :icon="ChatBubbleOutlineFilled" class="status-controls-item secondary-action">
@@ -197,9 +197,9 @@
                 <el-icon>
                   <LinkFilled />
                 </el-icon>
-                <span>开源地址</span>
+                <span>開源地址</span>
               </a>
-              <el-tooltip effect="dark" content="《熵减协议》- 星缘之境" placement="top">
+              <el-tooltip effect="dark" content="《熵減協議》- 星緣之境" placement="top">
                 <a
                   class="el-button status-controls-item"
                   target="_blank"
@@ -208,7 +208,7 @@
                   <el-icon>
                     <LibraryMusicOutlined />
                   </el-icon>
-                  <span>游戏主题曲</span>
+                  <span>遊戲主題曲</span>
                 </a>
               </el-tooltip>
             </div>
@@ -230,87 +230,87 @@
     </div>
     <el-dialog
       v-model="showHelp"
-      title="熵减战争 - 游戏说明"
+      title="熵減戰爭 - 遊戲說明"
       width="80%"
       :lock-scroll="false"
       destroy-on-close
       class="help-dialog"
     >
       <el-scrollbar height="400px" class="help-content">
-        <h3>世界观</h3>
+        <h3>世界觀</h3>
         <p>
-          在熵减战争中，你领导一个文明对抗宇宙的熵增法则。从微观的原子排序开始，逐步实现分子冷却、恒星熄灭、黑洞解压，最终达到能量物质化和宇宙单一化，将所有物质重新转化为氢，实现最低熵状态。
+          在熵減戰爭中，你領導一個文明對抗宇宙的熵增法則。從微觀的原子排序開始，逐步實現分子冷卻、恆星熄滅、黑洞解壓，最終達到能量物質化和宇宙單一化，將所有物質重新轉化為氫，實現最低熵狀態。
         </p>
-        <h3>熵减进程</h3>
+        <h3>熵減進程</h3>
         <ul>
           <li>
             <strong>原子排序</strong>
-            ：手动排列原子，建立有序结构，减缓局部热运动
+            ：手動排列原子，建立有序結構，減緩局部熱運動
           </li>
           <li>
-            <strong>分子冷却</strong>
-            ：减缓分子热运动，降低系统温度，建立分子级有序
+            <strong>分子冷卻</strong>
+            ：減緩分子熱運動，降低系統溫度，建立分子級有序
           </li>
           <li>
-            <strong>恒星熄灭</strong>
-            ：熄灭恒星，停止核聚变产生的熵增，控制恒星活动
+            <strong>恆星熄滅</strong>
+            ：熄滅恆星，停止核融合產生的熵增，控制恆星活動
           </li>
           <li>
-            <strong>黑洞解压</strong>
-            ：解压黑洞，释放被压缩的信息，实现超大规模熵减
+            <strong>黑洞解壓</strong>
+            ：解壓黑洞，釋放被壓縮的資訊，實現超大規模熵減
           </li>
           <li>
-            <strong>能量物质化</strong>
-            ：将纯能量转化为有序物质，实现宇宙级熵减
+            <strong>能量物質化</strong>
+            ：將純能量轉化為有序物質，實現宇宙級熵減
           </li>
           <li>
-            <strong>宇宙单一化</strong>
-            ：将所有物质重新转化为氢，达到最低熵状态
+            <strong>宇宙單一化</strong>
+            ：將所有物質重新轉化為氫，達到最低熵狀態
           </li>
         </ul>
-        <h3>核心系统</h3>
+        <h3>核心系統</h3>
         <ul>
           <li>
-            <strong>渐进熵减</strong>
-            ：从微观到宏观，逐步实现宇宙的有序化
+            <strong>漸進熵減</strong>
+            ：從微觀到宏觀，逐步實現宇宙的有序化
           </li>
           <li>
-            <strong>双态宇宙规则</strong>
-            ：有序态时科技效率+300%，混沌态时资源产出-90%
+            <strong>雙態宇宙規則</strong>
+            ：有序態時科技效率+300%，混沌態時資源產出-90%
           </li>
           <li>
-            <strong>黑暗森林法则</strong>
-            ：坐标暴露值过高会触发降维打击。暴露值代表文明在宇宙中的可被发现程度，过高时将遭受资源损失或建筑摧毁。可通过特定科技和建筑降低暴露值。
+            <strong>黑暗森林法則</strong>
+            ：坐標暴露值過高會觸發降維打擊。暴露值代表文明在宇宙中的可被發現程度，過高時將遭受資源損失或建築摧毀。可通過特定科技和建築降低暴露值。
           </li>
           <li>
-            <strong>三体混沌引擎</strong>
-            ：偏差值过大时触发乱纪元，建筑产出归零
+            <strong>三體混沌引擎</strong>
+            ：偏差值過大時觸發亂紀元，建築產出歸零
           </li>
           <li>
-            <strong>知识黑洞效应</strong>
-            ：文明等级提升时前代技术效率衰减
+            <strong>知識黑洞效應</strong>
+            ：文明等級提升時前代技術效率衰減
           </li>
         </ul>
-        <h3>游戏目标</h3>
+        <h3>遊戲目標</h3>
         <p>
-          通过建造熵减建筑、解锁相关科技、管理资源，逐步完成从原子到宇宙的熵减进程。最终目标是实现宇宙单一化，将所有物质重新转化为氢，达到最低熵状态。
+          通過建造熵減建築、解鎖相關科技、管理資源，逐步完成從原子到宇宙的熵減進程。最終目標是實現宇宙單一化，將所有物質重新轉化為氫，達到最低熵狀態。
         </p>
-        <h3>进度与熵减阶段说明</h3>
+        <h3>進度與熵減階段說明</h3>
         <p>
-          游戏的核心进度完全由“熵减阶段”推进决定。每当你手动完成一个熵减阶段，文明将进入新的时代，解锁新的科技和建筑。只有推进到下一个熵减阶段，才会解锁该阶段的科技和建筑内容。文明时代的变迁、资源体系的扩展、科技的分支，全部与熵减阶段同步。熵减阶段的推进需要消耗资源，建议优先提升产出和效率，避免陷入资源瓶颈或死局。游戏目标是逐步完成所有熵减阶段，最终实现宇宙单一化，达到最低熵状态。
+          遊戲的核心進度完全由“熵減階段”推進決定。每當你手動完成一個熵減階段，文明將進入新的時代，解鎖新的科技和建築。只有推進到下一個熵減階段，才會解鎖該階段的科技和建築內容。文明時代的變遷、資源體系的擴展、科技的分支，全部與熵減階段同步。熵減階段的推進需要消耗資源，建議優先提升產出和效率，避免陷入資源瓶頸或死局。遊戲目標是逐步完成所有熵減階段，最終實現宇宙單一化，達到最低熵狀態。
         </p>
-        <h3>文明时代推进</h3>
+        <h3>文明時代推進</h3>
         <p>
-          文明时代的推进完全由熵减阶段决定。每当你完成一个熵减阶段，文明自动进入新时代，解锁新科技和建筑，并获得全局奖励（如科技效率+10%、建筑产出+10%、资源与文明基因奖励等）。文明时代不会倒退，只能不断进化。每次进入新时代，奖励内容会在事件日志中显示。
+          文明時代的推進完全由熵減階段決定。每當你完成一個熵減階段，文明自動進入新時代，解鎖新科技和建築，並獲得全局獎勵（如科技效率+10%、建築產出+10%、資源與文明基因獎勵等）。文明時代不會倒退，只能不斷進化。每次進入新時代，獎勵內容會在事件日誌中顯示。
         </p>
         <h3>操作指南</h3>
         <ul>
-          <li>执行熵减：消耗资源进行当前阶段的熵减操作</li>
-          <li>建造建筑：建造当前熵减阶段的相关建筑</li>
-          <li>解锁科技：解锁支持当前熵减阶段的科技</li>
-          <li>阶段推进：完成当前阶段后自动解锁下一阶段</li>
-          <li>保存文明基因：防止技术效率过度衰减</li>
-          <li>监控威胁：注意坐标暴露和三体偏差</li>
+          <li>執行熵減：消耗資源進行當前階段的熵減操作</li>
+          <li>建造建築：建造當前熵減階段的相關建築</li>
+          <li>解鎖科技：解鎖支持當前熵減階段的科技</li>
+          <li>階段推進：完成當前階段後自動解鎖下一階段</li>
+          <li>保存文明基因：防止技術效率過度衰減</li>
+          <li>監控威脅：注意坐標暴露和三體偏差</li>
         </ul>
       </el-scrollbar>
     </el-dialog>
@@ -380,7 +380,7 @@
     }
   }
 
-  // 存续度计算
+  // 存續度計算
   const civilizationSurvival = computed(() => {
     const knowledgeDensity = Math.log10(gameStore.resources.knowledge + 1)
     const energyDensity = Math.log10(gameStore.resources.energy + 1)
@@ -389,27 +389,27 @@
 
   const gradProgress = computed(() => {
     return {
-      techRatio: { name: '科技毕业度', progress: gameStore.techRatio },
-      stageRatio: { name: '阶段毕业度', progress: gameStore.stageRatio },
-      buildRatio: { name: '建筑毕业度', progress: gameStore.buildRatio },
-      entropyGap: { name: '熵减完成度', progress: gameStore.entropyGap }
+      techRatio: { name: '科技畢業度', progress: gameStore.techRatio },
+      stageRatio: { name: '階段畢業度', progress: gameStore.stageRatio },
+      buildRatio: { name: '建築畢業度', progress: gameStore.buildRatio },
+      entropyGap: { name: '熵減完成度', progress: gameStore.entropyGap }
     }
   })
   const categories = {
-    resourceSys: ['资源', '资源系统'],
-    cosmicInfo: ['信息', '宇宙信息'],
-    cosmicWatch: ['监控', '宇宙监控'],
-    entropyMgmt: ['系统', '管理系统']
+    resourceSys: ['資源', '資源系統'],
+    cosmicInfo: ['資訊', '宇宙資訊'],
+    cosmicWatch: ['監控', '宇宙監控'],
+    entropyMgmt: ['系統', '管理系統']
   }
 
   const tabsList = computed(() => {
     return [
-      { type: 'buildings', name: '建筑系统', is: buildings, show: true },
-      { type: 'technologies', name: '科技系统', is: technologies, show: true },
-      { type: 'EntropyProgress', name: '熵减进程', is: EntropyProgress, show: true },
+      { type: 'buildings', name: '建築系統', is: buildings, show: true },
+      { type: 'technologies', name: '科技系統', is: technologies, show: true },
+      { type: 'EntropyProgress', name: '熵減進程', is: EntropyProgress, show: true },
       { type: 'exploration', name: '宇宙探索', is: ExplorationPanel, show: true },
-      { type: 'achievement', name: '成就系统', is: AchievementPanel, show: true },
-      { type: 'gm', name: 'GM系统', is: GmPanel, show: gameStore.isGm }
+      { type: 'achievement', name: '成就系統', is: AchievementPanel, show: true },
+      { type: 'gm', name: 'GM系統', is: GmPanel, show: gameStore.isGm }
     ]
   })
 
@@ -443,10 +443,10 @@
     }, 1000)
   }
 
-  // 游戏循环
+  // 遊戲循環
   const startGameLoop = () => worker.postMessage('start')
 
-  // 停止游戏循环
+  // 停止遊戲循環
   const stopGameLoop = () => worker.postMessage('pause')
 
   worker.onmessage = () => {
@@ -454,28 +454,28 @@
     if (!processing.value) scheduleNext()
   }
 
-  // 切换游戏状态
+  // 切換遊戲狀態
   const toggleGame = () => {
     gameRunning.value = !gameRunning.value
     if (gameRunning.value) startGameLoop()
     else stopGameLoop()
   }
 
-  // 导出存档
+  // 導出存檔
   const download = () => {
     try {
       saveAs(
         new Blob([localStorage.getItem(__APP_NAME__)], { type: 'application/json' }),
-        `${__APP_TITLE__}存档数据-${new Date().toISOString().slice(0, 10)}-${Date.now()}.json`
+        `${__APP_TITLE__}存檔數據-${new Date().toISOString().slice(0, 10)}-${Date.now()}.json`
       )
-      ElMessage.success('存档已导出')
+      ElMessage.success('存檔已導出')
     } catch (error) {
-      ElMessage.error('存档导出失败：' + error.message)
-      gameStore.addToEventLog('存档导出失败：' + error.message)
+      ElMessage.error('存檔導出失敗：' + error.message)
+      gameStore.addToEventLog('存檔導出失敗：' + error.message)
     }
   }
 
-  // 导入存档
+  // 導入存檔
   const upload = data => {
     const file = data.file
     const reader = new FileReader()
@@ -484,36 +484,36 @@
         localStorage.setItem(__APP_NAME__, e.target.result)
         location.reload()
       } catch (error) {
-        ElMessage.error('存档导入失败：' + error.message)
+        ElMessage.error('存檔導入失敗：' + error.message)
       }
     }
     reader.readAsText(file)
   }
 
-  // 重置游戏
+  // 重設遊戲
   const resetGame = () => {
     gmNum.value++
     if (gmNum.value >= 10) {
       gameStore.isGm = true
-      ElMessage({ message: 'GM功能已开启', type: 'success' })
+      ElMessage({ message: 'GM功能已開啟', type: 'success' })
       return
     }
-    ElMessageBox.confirm('你确定要删除数据吗?', '提示', {
+    ElMessageBox.confirm('你確定要刪除數據嗎?', '提示', {
       type: 'warning',
       lockScroll: false,
       distinguishCancelAndClose: true,
-      confirmButtonText: '确定',
+      confirmButtonText: '確定',
       cancelButtonText: '取消'
     })
       .then(() => {
         localStorage.removeItem(__APP_NAME__)
-        ElMessage.success('游戏数据已重置')
+        ElMessage.success('遊戲數據已重設')
         location.reload()
       })
       .catch(() => {})
   }
 
-  // 组件挂载时启动游戏
+  // 組件掛載時啟動遊戲
   onMounted(() => {
     startGameLoop()
     exposureCooldownTimer.value = setInterval(() => {
@@ -523,26 +523,26 @@
     }, 1000)
     if (!gameStore.achievements['compound_allTech_allStage'].unlocked && gameStore.tripleStarDeviation >= 100) {
       ElMessageBox.confirm(
-        '这个误差被无限放大，最终导致文明无法预测未来、无法避免毁灭，你的文明已毁灭！',
-        '三体偏差值已被无限放大',
+        '這個誤差被無限放大，最終導致文明無法預測未來、無法避免毀滅，你的文明已毀滅！',
+        '三體偏差值已被無限放大',
         {
           lockScroll: true,
           showClose: false,
           showCancelButton: false,
-          confirmButtonText: '重新开始',
+          confirmButtonText: '重新開始',
           closeOnPressEscape: false,
           closeOnClickModal: false
         }
       )
         .then(() => {
           localStorage.removeItem(__APP_NAME__)
-          ElMessage.success('游戏数据已重置')
+          ElMessage.success('遊戲數據已重設')
           location.reload()
         })
         .catch(() => {})
     }
   })
-  // 组件卸载时清理
+  // 組件卸載時清理
   onBeforeUnmount(() => {
     stopGameLoop()
     if (exposureCooldownTimer.value) {
@@ -915,7 +915,7 @@
     background-color: #0000004d;
   }
 
-  /* Element Plus 组件样式覆盖 */
+  /* Element Plus 組件樣式覆蓋 */
   .el-card {
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.1) !important;

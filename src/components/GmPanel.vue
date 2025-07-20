@@ -2,31 +2,31 @@
   <el-card class="gm-panel" shadow="never">
     <template #header>
       <div class="card-header">
-        <span>GM万能面板（开发/测试专用）</span>
+        <span>GM萬能面板（開發/測試專用）</span>
       </div>
     </template>
     <el-button-group>
-      <el-button size="small" type="success" @click="maxAllResources">一键资源最大</el-button>
-      <el-button size="small" type="warning" @click="unlockAllTech">全量解锁科技</el-button>
-      <el-button size="small" type="primary" @click="unlockAllBuildings">全量解锁建筑</el-button>
-      <el-button size="small" type="danger" @click="unlockAllStages">全量解锁熵减阶段</el-button>
-      <el-button size="small" type="info" @click="resetAll">清空所有（重置）</el-button>
+      <el-button size="small" type="success" @click="maxAllResources">一鍵資源最大</el-button>
+      <el-button size="small" type="warning" @click="unlockAllTech">全量解鎖科技</el-button>
+      <el-button size="small" type="primary" @click="unlockAllBuildings">全量解鎖建築</el-button>
+      <el-button size="small" type="danger" @click="unlockAllStages">全量解鎖熵減階段</el-button>
+      <el-button size="small" type="info" @click="resetAll">清空所有（重設）</el-button>
     </el-button-group>
     <el-tabs v-model="activeTab">
-      <el-tab-pane label="资源" name="res">
+      <el-tab-pane label="資源" name="res">
         <el-table :data="resourceList" size="small" style="width: 100%">
-          <el-table-column prop="name" label="资源" width="120" />
-          <el-table-column label="数量">
+          <el-table-column prop="name" label="資源" width="120" />
+          <el-table-column label="數量">
             <template #default="{ row }">
               <el-input-number v-model="gameStore.resources[row.key]" :min="0" :max="1e18" :step="1" size="small" />
             </template>
           </el-table-column>
         </el-table>
       </el-tab-pane>
-      <el-tab-pane label="建筑" name="building">
+      <el-tab-pane label="建築" name="building">
         <el-table :data="buildingList" size="small" style="width: 100%">
-          <el-table-column prop="name" label="建筑" width="120" />
-          <el-table-column label="数量">
+          <el-table-column prop="name" label="建築" width="120" />
+          <el-table-column label="數量">
             <template #default="{ row }">
               <el-input-number
                 v-model="gameStore.buildings[row.key].count"
@@ -37,7 +37,7 @@
               />
             </template>
           </el-table-column>
-          <el-table-column label="等级">
+          <el-table-column label="等級">
             <template #default="{ row }">
               <el-input-number
                 v-model="gameStore.buildings[row.key].level"
@@ -48,7 +48,7 @@
               />
             </template>
           </el-table-column>
-          <el-table-column label="解锁">
+          <el-table-column label="解鎖">
             <template #default="{ row }">
               <el-switch v-model="gameStore.buildings[row.key].unlocked" />
             </template>
@@ -58,7 +58,7 @@
       <el-tab-pane label="科技" name="tech">
         <el-table :data="techList" size="small" style="width: 100%">
           <el-table-column prop="name" label="科技" width="120" />
-          <el-table-column label="解锁">
+          <el-table-column label="解鎖">
             <template #default="{ row }">
               <el-switch v-model="gameStore.technologies[row.key].unlocked" />
             </template>
@@ -76,15 +76,15 @@
           </el-table-column>
         </el-table>
       </el-tab-pane>
-      <el-tab-pane label="熵减阶段" name="stage">
+      <el-tab-pane label="熵減階段" name="stage">
         <el-table :data="stageList" size="small" style="width: 100%">
-          <el-table-column prop="name" label="阶段" width="120" />
-          <el-table-column label="解锁">
+          <el-table-column prop="name" label="階段" width="120" />
+          <el-table-column label="解鎖">
             <template #default="{ row }">
               <el-switch v-model="gameStore.entropyReductionStages[row.key].unlocked" />
             </template>
           </el-table-column>
-          <el-table-column label="进度">
+          <el-table-column label="進度">
             <template #default="{ row }">
               <el-input-number
                 v-model="gameStore.entropyReductionStages[row.key].progress"

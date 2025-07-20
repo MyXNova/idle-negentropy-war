@@ -2,7 +2,7 @@
   <el-card class="achievement-panel" shadow="never">
     <template #header>
       <div class="card-header">
-        <span>成就系统</span>
+        <span>成就系統</span>
       </div>
     </template>
     <el-tabs v-model="activeCategory">
@@ -23,7 +23,7 @@
           </div>
           <div class="achievement-cost">
             <p>
-              目标：
+              目標：
               <span class="highlight">
                 <template v-if="cfg.type === 'resource'">
                   {{ gameStore.formatNumber(gameStore.achievements[cfg.id].currentTarget) }}
@@ -35,16 +35,16 @@
                 </template>
                 <template v-else-if="cfg.type === 'tech'">{{ technologiesData[cfg.tech].group }}</template>
                 <template v-else-if="cfg.type === 'entropyStage'">
-                  达成{{ entropyReductionsData[cfg.entropyStage].name }}阶段
+                  達成{{ entropyReductionsData[cfg.entropyStage].name }}階段
                 </template>
-                <template v-else-if="cfg.type === 'compound'">复合条件</template>
-                <template v-else>达成条件</template>
+                <template v-else-if="cfg.type === 'compound'">複合條件</template>
+                <template v-else>達成條件</template>
               </span>
             </p>
           </div>
           <div class="achievement-cost">
             <p>
-              奖励：
+              獎勵：
               <span class="highlight">
                 {{
                   Object.entries(achievementService.getAchievementReward(cfg, gameStore.achievements[cfg.id]))
@@ -55,9 +55,9 @@
             </p>
             <p>
               <span v-if="cfg.unlock">
-                解锁：
+                解鎖：
                 <span v-if="cfg.unlock.tech">科技({{ technologiesData[cfg.unlock.tech].group }})</span>
-                <span v-if="cfg.unlock.building">建筑({{ buildingsData[cfg.unlock.building].name }})</span>
+                <span v-if="cfg.unlock.building">建築({{ buildingsData[cfg.unlock.building].name }})</span>
               </span>
             </p>
           </div>
@@ -83,8 +83,8 @@
             @click="achievementService.claimAchievement(cfg.id)"
           >
             <template v-if="cfg.once && gameStore.achievements[cfg.id].unlocked">已完成</template>
-            <template v-else-if="gameStore.achievements[cfg.id].completed">领取奖励</template>
-            <template v-else>条件不足</template>
+            <template v-else-if="gameStore.achievements[cfg.id].completed">領取獎勵</template>
+            <template v-else>條件不足</template>
           </el-button>
         </div>
       </div>
@@ -105,12 +105,12 @@
   const gameStore = useGameStore()
   const achievementService = useAchievementService()
 
-  // 分类
+  // 分類
   const categories = [
-    { key: 'resource', label: '资源' },
-    { key: 'building', label: '建筑' },
+    { key: 'resource', label: '資源' },
+    { key: 'building', label: '建築' },
     { key: 'tech', label: '科技' },
-    { key: 'entropyStage', label: '熵减' },
+    { key: 'entropyStage', label: '熵減' },
     { key: 'compound', label: '其他' }
   ]
   const activeCategory = ref('resource')

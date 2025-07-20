@@ -1,13 +1,13 @@
 <template>
-  <!-- 建筑系统 -->
+  <!-- 建築系統 -->
   <el-card class="building-panel" shadow="never">
     <template #header>
       <div class="card-header">
-        <span>建筑系统({{ unlockedBuildings.length }}/{{ Object.entries(buildingsData).length }})</span>
+        <span>建築系統({{ unlockedBuildings.length }}/{{ Object.entries(buildingsData).length }})</span>
       </div>
     </template>
     <div class="building-grid">
-      <el-alert title="后续建筑可以通过科技系统解锁" type="primary" v-if="unlockedBuildings.length === 1" />
+      <el-alert title="後續建築可以通過科技系統解鎖" type="primary" v-if="unlockedBuildings.length === 1" />
       <div
         v-for="[name, building] in unlockedBuildings"
         :key="name"
@@ -24,12 +24,12 @@
           <h4>{{ buildingsData[name].name }}</h4>
         </div>
         <div class="building-upgrade">
-          <p>建筑信息:</p>
-          <div>数量: {{ gameStore.formatNumber(building.count) }}</div>
-          <div>等级: {{ gameStore.formatNumber(building.level) }}</div>
+          <p>建築資訊:</p>
+          <div>數量: {{ gameStore.formatNumber(building.count) }}</div>
+          <div>等級: {{ gameStore.formatNumber(building.level) }}</div>
         </div>
         <div class="building-upgrade" v-if="building.count">
-          <p>产出信息:</p>
+          <p>產出資訊:</p>
           <div v-for="(item, index) in gameStore.canResource(name)" :key="index">
             {{ resourcesData[item.res]?.name }}：{{ item.val > 0 ? '+' : '' }} {{ gameStore.formatNumber(item.val) }} /
             天
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="building-upgrade" v-if="building.count">
-          <p>升级消耗:</p>
+          <p>升級消耗:</p>
           <div v-if="Object.keys(buildingsData[name].upgradeCost).length">
             <div
               v-for="(cost, resource) in gameStore.getDisplayCost(
@@ -63,7 +63,7 @@
               {{ resourcesData[resource].name }}: {{ gameStore.formatNumber(cost) }}
             </div>
           </div>
-          <div v-else>无升级消耗</div>
+          <div v-else>無升級消耗</div>
         </div>
         <el-button
           class="panelButton"
@@ -73,8 +73,8 @@
         >
           {{
             !gameStore.updateDisplayCost(buildingsData[name].cost, building.count, building.level, false)
-              ? '资源不足'
-              : '建造建筑'
+              ? '資源不足'
+              : '建造建築'
           }}
         </el-button>
         <el-button
@@ -87,8 +87,8 @@
         >
           {{
             !gameStore.updateDisplayCost(buildingsData[name].upgradeCost, building.count, building.level, true)
-              ? '资源不足'
-              : '升级建筑'
+              ? '資源不足'
+              : '升級建築'
           }}
         </el-button>
       </div>
@@ -104,7 +104,7 @@
 
   const gameStore = useGameStore()
 
-  // 自动解锁到当前熵减阶段为止的所有建筑
+  // 自動解鎖到當前熵減階段為止的所有建築
   const unlockBuilding = () => {
     const stageOrder = gameStore.stageOrder
     const idx = stageOrder.indexOf(gameStore.currentEntropyStage)
@@ -118,7 +118,7 @@
     }
   }
 
-  // 计算属性
+  // 計算屬性
   const unlockedBuildings = computed(() =>
     Object.entries(gameStore.buildings).filter(([name, building]) => building.unlocked)
   )

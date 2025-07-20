@@ -1,6 +1,6 @@
-// 建筑数据
+// 建築數據
 export default {
-  // 基础建筑
+  // 基礎建築
   atomicSorter: {
     name: '原子排序器',
     count: 1,
@@ -12,7 +12,7 @@ export default {
     entropyStage: 'atomicOrdering'
   },
   molecularCooler: {
-    name: '分子冷却器',
+    name: '分子冷卻器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05, energy: 0.2, matter: 0.2 },
@@ -21,9 +21,9 @@ export default {
     unlocked: false,
     entropyStage: 'molecularCooling'
   },
-  // 恒星建筑
+  // 恆星建築
   stellarExtinguisher: {
-    name: '恒星熄灭器',
+    name: '恆星熄滅器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05, energy: 1, matter: 1, darkMatter: 0.1 },
@@ -32,9 +32,9 @@ export default {
     unlocked: false,
     entropyStage: 'stellarExtinction'
   },
-  // 黑洞建筑
+  // 黑洞建築
   blackholeDecompressor: {
-    name: '黑洞解压器',
+    name: '黑洞解壓器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05, energy: 5, matter: 5, antiMatter: 0.1 },
@@ -43,9 +43,9 @@ export default {
     unlocked: false,
     entropyStage: 'blackholeDecompression'
   },
-  // 宇宙建筑
+  // 宇宙建築
   energyMaterializer: {
-    name: '能量物质化器',
+    name: '能量物質化器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05, energy: 25, matter: 25, nanoMaterial: 7.5 },
@@ -55,7 +55,7 @@ export default {
     entropyStage: 'energyMaterialization'
   },
   universalUnifier: {
-    name: '宇宙单一化器',
+    name: '宇宙單一化器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.5, energy: 100, matter: 100 },
@@ -65,7 +65,7 @@ export default {
     entropyStage: 'universalUnification'
   },
   quantumComputer: {
-    name: '量子计算机',
+    name: '量子計算機',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.5, quantumBits: 0.01 },
@@ -75,7 +75,7 @@ export default {
     entropyStage: 'molecularCooling'
   },
   spacetimePortal: {
-    name: '时空传送门',
+    name: '時空傳送門',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 1, darkMatter: 0.01 },
@@ -85,7 +85,7 @@ export default {
     entropyStage: 'blackholeDecompression'
   },
   lowPotentialTrap: {
-    name: '低势能陷阱',
+    name: '低勢能陷阱',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05, energy: 2.5, matter: 1 },
@@ -105,7 +105,7 @@ export default {
     entropyStage: 'molecularCooling'
   },
   brownianCaptureNet: {
-    name: '布朗运动捕获网',
+    name: '布朗運動捕獲網',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05 },
@@ -115,7 +115,7 @@ export default {
     entropyStage: 'molecularCooling'
   },
   stealthGenerator: {
-    name: '隐匿发生器',
+    name: '隱匿發生器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: -0.25 },
@@ -125,7 +125,7 @@ export default {
     entropyStage: 'stellarExtinction'
   },
   antiMatterSynthesizer: {
-    name: '反物质合成器',
+    name: '反物質合成器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.5, antiMatter: 0.5 },
@@ -135,7 +135,7 @@ export default {
     entropyStage: 'blackholeDecompression'
   },
   darkMatterCollector: {
-    name: '暗物质收集器',
+    name: '暗物質收集器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.5, darkMatter: 0.5 },
@@ -145,7 +145,7 @@ export default {
     entropyStage: 'stellarExtinction'
   },
   aotoumRealityPerforator: {
-    name: '奥陶姆现实透孔仪',
+    name: '奧陶姆現實透孔儀',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 1 },
@@ -155,7 +155,7 @@ export default {
     entropyStage: 'energyMaterialization'
   },
   crystalDefectRepairer: {
-    name: '晶体缺陷修仪',
+    name: '晶體缺陷修儀',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 1.5, nanoMaterial: 1.5 },
@@ -165,7 +165,7 @@ export default {
     entropyStage: 'energyMaterialization'
   },
   bioEntropyStabilizer: {
-    name: '生物熵稳定舱',
+    name: '生物熵穩定艙',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05, bioOrder: 0.1 },
@@ -175,7 +175,7 @@ export default {
     entropyStage: 'energyMaterialization'
   },
   orbitalOptimizer: {
-    name: '行星轨道优化器',
+    name: '行星軌道最佳化器',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: -0.5 },
@@ -185,7 +185,7 @@ export default {
     entropyStage: 'energyMaterialization'
   },
   nanoFactory: {
-    name: '纳米工厂',
+    name: '奈米工廠',
     count: 0,
     level: 1,
     outputs: { coordinateExposure: 0.05, nanoMaterial: 0.1 },

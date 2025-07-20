@@ -16,7 +16,7 @@
           <div class="exploration-cost"></div>
           <div class="exploration-pool">
             <p>
-              探索损耗：
+              探索損耗：
               <span>
                 {{
                   Object.entries(target.cost)
@@ -26,7 +26,7 @@
               </span>
             </p>
             <p>
-              常规掉落：
+              常規掉落：
               <span>
                 {{
                   target.commonPool
@@ -45,7 +45,7 @@
                   target.rarePool
                     .map(
                       k =>
-                        `${explorationResData[k.res]?.name}(概率${gameStore.formatNumber(
+                        `${explorationResData[k.res]?.name}(機率${gameStore.formatNumber(
                           Math.round(k.chance * 1000) / 10
                         )}%)`
                     )
@@ -54,7 +54,7 @@
               </span>
             </p>
             <p>
-              失败补偿：
+              失敗補償：
               <span v-for="(val, res) in target.failReward" :key="res">
                 {{ gameStore.formatNumber(val) }}{{ explorationResData[res].name || res }}
               </span>
@@ -65,27 +65,27 @@
             :disabled="isOnCooldown(target.id) || !canAfford(target.cost) || gameStore.explorationres.probe <= 0"
             @click="startExploration(target)"
           >
-            <template v-if="gameStore.explorationres.probe <= 0">无探测器</template>
-            <template v-else-if="isOnCooldown(target.id)">冷却中({{ getCooldown(target.id) }})</template>
-            <template v-else-if="!canAfford(target.cost)">资源不足</template>
+            <template v-if="gameStore.explorationres.probe <= 0">無探測器</template>
+            <template v-else-if="isOnCooldown(target.id)">冷卻中({{ getCooldown(target.id) }})</template>
+            <template v-else-if="!canAfford(target.cost)">資源不足</template>
             <template v-else>派遣探索</template>
           </el-button>
         </div>
       </div>
     </div>
     <div class="exploration-collect" v-else>
-      <h4>探测器({{ gameStore.explorationres.probe }}/5)</h4>
+      <h4>探測器({{ gameStore.explorationres.probe }}/5)</h4>
       <el-button
         size="small"
         type="success"
         @click="makeProbe"
         :disabled="gameStore.explorationres.probe >= 5 || !canAfford(probeCost)"
       >
-        制造探测器（{{ gameStore.formatNumber(probeCost.energy) }}能量/{{
+        製造探測器（{{ gameStore.formatNumber(probeCost.energy) }}能量/{{
           gameStore.formatNumber(probeCost.matter)
-        }}物质）
+        }}物質）
       </el-button>
-      <h4>收集与合成</h4>
+      <h4>收集與合成</h4>
       <div class="collect-list">
         <div v-for="item in collectList" :key="item.res" class="collect-item">
           <div class="collect-info">
@@ -128,11 +128,11 @@
   const collectList = [
     { res: 'relicShard', need: 10, reward: { alienFragment: 1 }, rewardText: '外星科技碎片' },
     { res: 'alienFragment', need: 5, reward: { techBoost: 1 }, rewardText: '科技效率提升' },
-    { res: 'techFragment', need: 10, reward: { knowledge: 5000 }, rewardText: '知识' },
+    { res: 'techFragment', need: 10, reward: { knowledge: 5000 }, rewardText: '知識' },
     { res: 'ancientLog', need: 3, reward: { energy: 10000 }, rewardText: '能量' },
-    { res: 'timeShard', need: 10, reward: { singularityCore: 1 }, rewardText: '奇点核心' },
-    { res: 'planetDust', need: 10, reward: { planetRelic: 1 }, rewardText: '星球遗珍' },
-    { res: 'voidLog', need: 5, reward: { voidCrystal: 1 }, rewardText: '虚空结晶' }
+    { res: 'timeShard', need: 10, reward: { singularityCore: 1 }, rewardText: '奇點核心' },
+    { res: 'planetDust', need: 10, reward: { planetRelic: 1 }, rewardText: '星球遺珍' },
+    { res: 'voidLog', need: 5, reward: { voidCrystal: 1 }, rewardText: '虛空結晶' }
   ]
 
   const canAfford = cost => {
@@ -184,20 +184,20 @@
 
   const startExploration = target => {
     if (gameStore.explorationres.probe <= 0) return
-    // 扣除资源
+    // 扣除資源
     Object.entries(target.cost).forEach(([res, val]) => {
       gameStore.resources[res] -= val
     })
-    // 消耗探测器
+    // 消耗探測器
     gameStore.explorationres.probe--
-    // 设置冷却
+    // 設置冷卻
     gameStore.cooldowns[target.id] = Date.now() / 1000 + target.cooldown
-    // 判定结果
+    // 判定結果
     const roll = Math.random()
-    let result = '探索失败'
+    let result = '探索失敗'
     let reward = {}
     if (roll < target.chance) {
-      // 掉落常规奖励
+      // 掉落常規獎勵
       const common = weightedRandom(target.commonPool)
       const amount = Math.floor(common.min + Math.random() * (common.max - common.min + 1))
       reward[common.res] = amount
@@ -207,7 +207,7 @@
           reward[rare.res] = (reward[rare.res] || 0) + 1
         }
       }
-      // 特殊奖励处理
+      // 特殊獎勵處理
       if (reward.techBoost) {
         Object.values(gameStore.technologies).forEach(tech => {
           tech.efficiency *= 1.05
@@ -215,15 +215,15 @@
       }
       result = '探索成功'
     } else {
-      // 失败必得补偿
+      // 失敗必得補償
       Object.entries(target.failReward).forEach(([res, val]) => {
         reward[res] = val
       })
-      result = '探索失败（获得补偿）'
+      result = '探索失敗（獲得補償）'
     }
-    // 发放奖励
+    // 發放獎勵
     Object.entries(reward).forEach(([res, val]) => {
-      if (res === 'techBoost') return // 已处理
+      if (res === 'techBoost') return // 已處理
       if (gameStore.resources[res] !== undefined) {
         gameStore.resources[res] += val
       } else {

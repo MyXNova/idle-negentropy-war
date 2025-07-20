@@ -1,10 +1,10 @@
-// 无限递归成就类型配置
+// 無限遞迴成就類型配置
 export default [
-  // 资源类成就
+  // 資源類成就
   {
     id: 'energy_achievement',
-    name: '能量大师',
-    desc: '累计获得能量',
+    name: '能量大師',
+    desc: '累計獲得能量',
     type: 'resource',
     resource: ['energy'],
     baseTarget: 100,
@@ -15,8 +15,8 @@ export default [
   },
   {
     id: 'matter_achievement',
-    name: '物质富翁',
-    desc: '累计获得物质',
+    name: '物質富翁',
+    desc: '累計獲得物質',
     type: 'resource',
     resource: ['matter'],
     baseTarget: 100,
@@ -27,8 +27,8 @@ export default [
   },
   {
     id: 'knowledge_achievement',
-    name: '知识渊博',
-    desc: '累计获得知识',
+    name: '知識淵博',
+    desc: '累計獲得知識',
     type: 'resource',
     resource: ['knowledge'],
     baseTarget: 100,
@@ -39,8 +39,8 @@ export default [
   },
   {
     id: 'darkMatter_achievement',
-    name: '暗物质猎手',
-    desc: '累计获得暗物质',
+    name: '暗物質獵手',
+    desc: '累計獲得暗物質',
     type: 'resource',
     resource: ['darkMatter'],
     baseTarget: 100,
@@ -51,8 +51,8 @@ export default [
   },
   {
     id: 'antiMatter_achievement',
-    name: '反物质专家',
-    desc: '累计获得反物质',
+    name: '反物質專家',
+    desc: '累計獲得反物質',
     type: 'resource',
     resource: ['antiMatter'],
     baseTarget: 100,
@@ -63,8 +63,8 @@ export default [
   },
   {
     id: 'nanoMaterial_achievement',
-    name: '纳米材料大师',
-    desc: '累计获得纳米材料',
+    name: '奈米材料大師',
+    desc: '累計獲得奈米材料',
     type: 'resource',
     resource: ['nanoMaterial'],
     baseTarget: 100,
@@ -75,8 +75,8 @@ export default [
   },
   {
     id: 'quantumBits_achievement',
-    name: '量子比特大师',
-    desc: '累计获得量子比特',
+    name: '量子比特大師',
+    desc: '累計獲得量子比特',
     type: 'resource',
     resource: ['quantumBits'],
     baseTarget: 100,
@@ -87,8 +87,8 @@ export default [
   },
   {
     id: 'bioOrder_achievement',
-    name: '生物有序度大师',
-    desc: '累计获得生物有序度',
+    name: '生物有序度大師',
+    desc: '累計獲得生物有序度',
     type: 'resource',
     resource: ['bioOrder'],
     baseTarget: 100,
@@ -97,11 +97,11 @@ export default [
     rewardMultiplier: 2,
     reward: { bioOrder: 10 }
   },
-  // 建筑类成就
+  // 建築類成就
   {
     id: 'build_atomicSorter',
     name: '原子排序器建造者',
-    desc: '累计建造原子排序器',
+    desc: '累計建造原子排序器',
     type: 'building',
     resource: ['energy'],
     building: 'atomicSorter',
@@ -113,8 +113,8 @@ export default [
   },
   {
     id: 'build_molecularCooler',
-    name: '分子冷却器建造者',
-    desc: '累计建造分子冷却器',
+    name: '分子冷卻器建造者',
+    desc: '累計建造分子冷卻器',
     type: 'building',
     resource: ['energy'],
     building: 'molecularCooler',
@@ -126,8 +126,8 @@ export default [
   },
   {
     id: 'build_stellarExtinguisher',
-    name: '恒星熄灭器建造者',
-    desc: '累计建造恒星熄灭器',
+    name: '恆星熄滅器建造者',
+    desc: '累計建造恆星熄滅器',
     type: 'building',
     resource: ['energy'],
     building: 'stellarExtinguisher',
@@ -139,8 +139,8 @@ export default [
   },
   {
     id: 'build_blackholeDecompressor',
-    name: '黑洞解压器建造者',
-    desc: '累计建造黑洞解压器',
+    name: '黑洞解壓器建造者',
+    desc: '累計建造黑洞解壓器',
     type: 'building',
     resource: ['energy'],
     building: 'blackholeDecompressor',
@@ -152,8 +152,8 @@ export default [
   },
   {
     id: 'build_energyMaterializer',
-    name: '能量物质化器建造者',
-    desc: '累计建造能量物质化器',
+    name: '能量物質化器建造者',
+    desc: '累計建造能量物質化器',
     type: 'building',
     resource: ['energy'],
     building: 'energyMaterializer',
@@ -165,8 +165,8 @@ export default [
   },
   {
     id: 'build_universalUnifier',
-    name: '宇宙单一化器建造者',
-    desc: '累计建造宇宙单一化器',
+    name: '宇宙單一化器建造者',
+    desc: '累計建造宇宙單一化器',
     type: 'building',
     resource: ['energy'],
     building: 'universalUnifier',
@@ -178,8 +178,8 @@ export default [
   },
   {
     id: 'build_quantumComputer',
-    name: '量子计算机建造者',
-    desc: '累计建造量子计算机',
+    name: '量子計算機建造者',
+    desc: '累計建造量子計算機',
     type: 'building',
     resource: ['quantumBits'],
     building: 'quantumComputer',
@@ -191,8 +191,8 @@ export default [
   },
   {
     id: 'build_spacetimePortal',
-    name: '时空传送门建造者',
-    desc: '累计建造时空传送门',
+    name: '時空傳送門建造者',
+    desc: '累計建造時空傳送門',
     type: 'building',
     resource: ['energy'],
     building: 'spacetimePortal',
@@ -204,8 +204,8 @@ export default [
   },
   {
     id: 'build_lowPotentialTrap',
-    name: '低势能陷阱建造者',
-    desc: '累计建造低势能陷阱',
+    name: '低勢能陷阱建造者',
+    desc: '累計建造低勢能陷阱',
     type: 'building',
     resource: ['energy'],
     building: 'lowPotentialTrap',
@@ -218,7 +218,7 @@ export default [
   {
     id: 'build_quantumDecoherenceSuppressor',
     name: '量子退相干抑制器建造者',
-    desc: '累计建造量子退相干抑制器',
+    desc: '累計建造量子退相干抑制器',
     type: 'building',
     resource: ['quantumBits'],
     building: 'quantumDecoherenceSuppressor',
@@ -230,8 +230,8 @@ export default [
   },
   {
     id: 'build_brownianCaptureNet',
-    name: '布朗运动捕获网建造者',
-    desc: '累计建造布朗运动捕获网',
+    name: '布朗運動捕獲網建造者',
+    desc: '累計建造布朗運動捕獲網',
     type: 'building',
     resource: ['energy'],
     building: 'brownianCaptureNet',
@@ -243,8 +243,8 @@ export default [
   },
   {
     id: 'build_stealthGenerator',
-    name: '隐匿发生器建造者',
-    desc: '累计建造隐匿发生器',
+    name: '隱匿發生器建造者',
+    desc: '累計建造隱匿發生器',
     type: 'building',
     resource: ['energy'],
     building: 'stealthGenerator',
@@ -256,8 +256,8 @@ export default [
   },
   {
     id: 'build_antiMatterSynthesizer',
-    name: '反物质合成器建造者',
-    desc: '累计建造反物质合成器',
+    name: '反物質合成器建造者',
+    desc: '累計建造反物質合成器',
     type: 'building',
     resource: ['antiMatter'],
     building: 'antiMatterSynthesizer',
@@ -269,8 +269,8 @@ export default [
   },
   {
     id: 'build_darkMatterCollector',
-    name: '暗物质收集器建造者',
-    desc: '累计建造暗物质收集器',
+    name: '暗物質收集器建造者',
+    desc: '累計建造暗物質收集器',
     type: 'building',
     resource: ['darkMatter'],
     building: 'darkMatterCollector',
@@ -282,8 +282,8 @@ export default [
   },
   {
     id: 'build_aotoumRealityPerforator',
-    name: '奥陶姆现实透孔仪建造者',
-    desc: '累计建造奥陶姆现实透孔仪',
+    name: '奧陶姆現實透孔儀建造者',
+    desc: '累計建造奧陶姆現實透孔儀',
     type: 'building',
     resource: ['nanoMaterial'],
     building: 'aotoumRealityPerforator',
@@ -295,8 +295,8 @@ export default [
   },
   {
     id: 'build_crystalDefectRepairer',
-    name: '晶体缺陷修仪建造者',
-    desc: '累计建造晶体缺陷修仪',
+    name: '晶體缺陷修儀建造者',
+    desc: '累計建造晶體缺陷修儀',
     type: 'building',
     resource: ['nanoMaterial'],
     building: 'crystalDefectRepairer',
@@ -308,8 +308,8 @@ export default [
   },
   {
     id: 'build_bioEntropyStabilizer',
-    name: '生物熵稳定舱建造者',
-    desc: '累计建造生物熵稳定舱',
+    name: '生物熵穩定艙建造者',
+    desc: '累計建造生物熵穩定艙',
     type: 'building',
     resource: ['bioOrder'],
     building: 'bioEntropyStabilizer',
@@ -321,8 +321,8 @@ export default [
   },
   {
     id: 'build_orbitalOptimizer',
-    name: '行星轨道优化器建造者',
-    desc: '累计建造行星轨道优化器',
+    name: '行星軌道最佳化器建造者',
+    desc: '累計建造行星軌道最佳化器',
     type: 'building',
     resource: ['energy'],
     building: 'orbitalOptimizer',
@@ -334,8 +334,8 @@ export default [
   },
   {
     id: 'build_nanoFactory',
-    name: '纳米工厂建造者',
-    desc: '累计建造纳米工厂',
+    name: '奈米工廠建造者',
+    desc: '累計建造奈米工廠',
     type: 'building',
     resource: ['nanoMaterial'],
     building: 'nanoFactory',
@@ -345,11 +345,11 @@ export default [
     rewardMultiplier: 2,
     reward: { nanoMaterial: 5 }
   },
-  // 科技类成就
+  // 科技類成就
   {
     id: 'unlock_atomicManipulation',
-    name: '原子操控解锁者',
-    desc: '解锁科技：原子操控',
+    name: '原子操控解鎖者',
+    desc: '解鎖科技：原子操控',
     type: 'tech',
     tech: 'atomicManipulation',
     baseReward: 20,
@@ -358,8 +358,8 @@ export default [
   },
   {
     id: 'unlock_thermalControl',
-    name: '热控先锋',
-    desc: '解锁科技：热控制',
+    name: '熱控先鋒',
+    desc: '解鎖科技：熱控制',
     type: 'tech',
     tech: 'thermalControl',
     baseReward: 20,
@@ -368,8 +368,8 @@ export default [
   },
   {
     id: 'unlock_stellarEngineering',
-    name: '恒星工程师',
-    desc: '解锁科技：恒星工程',
+    name: '恆星工程師',
+    desc: '解鎖科技：恆星工程',
     type: 'tech',
     tech: 'stellarEngineering',
     baseReward: 20,
@@ -378,8 +378,8 @@ export default [
   },
   {
     id: 'unlock_blackholePhysics',
-    name: '黑洞物理学家',
-    desc: '解锁科技：黑洞物理',
+    name: '黑洞物理學家',
+    desc: '解鎖科技：黑洞物理',
     type: 'tech',
     tech: 'blackholePhysics',
     baseReward: 20,
@@ -388,8 +388,8 @@ export default [
   },
   {
     id: 'unlock_energyConversion',
-    name: '能量转化大师',
-    desc: '解锁科技：能量转化',
+    name: '能量轉化大師',
+    desc: '解鎖科技：能量轉化',
     type: 'tech',
     tech: 'energyConversion',
     baseReward: 20,
@@ -398,8 +398,8 @@ export default [
   },
   {
     id: 'unlock_universalTheory',
-    name: '宇宙理论家',
-    desc: '解锁科技：宇宙理论',
+    name: '宇宙理論家',
+    desc: '解鎖科技：宇宙理論',
     type: 'tech',
     tech: 'universalTheory',
     baseReward: 20,
@@ -408,8 +408,8 @@ export default [
   },
   {
     id: 'unlock_quantumComputing',
-    name: '量子计算先锋',
-    desc: '解锁科技：量子计算',
+    name: '量子計算先鋒',
+    desc: '解鎖科技：量子計算',
     type: 'tech',
     tech: 'quantumComputing',
     baseReward: 20,
@@ -418,8 +418,8 @@ export default [
   },
   {
     id: 'unlock_spacetimeManipulation',
-    name: '时空操控者',
-    desc: '解锁科技：时空操控',
+    name: '時空操控者',
+    desc: '解鎖科技：時空操控',
     type: 'tech',
     tech: 'spacetimeManipulation',
     baseReward: 20,
@@ -428,8 +428,8 @@ export default [
   },
   {
     id: 'unlock_lowPotentialTrapTech',
-    name: '低势能陷阱专家',
-    desc: '解锁科技：低势能陷阱',
+    name: '低勢能陷阱專家',
+    desc: '解鎖科技：低勢能陷阱',
     type: 'tech',
     tech: 'lowPotentialTrapTech',
     baseReward: 20,
@@ -438,8 +438,8 @@ export default [
   },
   {
     id: 'unlock_quantumDecoherenceTech',
-    name: '量子退相干专家',
-    desc: '解锁科技：量子退相干',
+    name: '量子退相干專家',
+    desc: '解鎖科技：量子退相干',
     type: 'tech',
     tech: 'quantumDecoherenceTech',
     baseReward: 20,
@@ -448,8 +448,8 @@ export default [
   },
   {
     id: 'unlock_brownianCaptureTech',
-    name: '布朗捕获专家',
-    desc: '解锁科技：布朗运动捕获',
+    name: '布朗捕獲專家',
+    desc: '解鎖科技：布朗運動捕獲',
     type: 'tech',
     tech: 'brownianCaptureTech',
     baseReward: 20,
@@ -458,8 +458,8 @@ export default [
   },
   {
     id: 'unlock_stealthAlgorithm',
-    name: '隐匿算法大师',
-    desc: '解锁科技：隐匿算法',
+    name: '隱匿算法大師',
+    desc: '解鎖科技：隱匿算法',
     type: 'tech',
     tech: 'stealthAlgorithm',
     baseReward: 20,
@@ -468,8 +468,8 @@ export default [
   },
   {
     id: 'unlock_darkMatterExtraction',
-    name: '暗物质提取专家',
-    desc: '解锁科技：暗物质提取',
+    name: '暗物質提取專家',
+    desc: '解鎖科技：暗物質提取',
     type: 'tech',
     tech: 'darkMatterExtraction',
     baseReward: 20,
@@ -478,8 +478,8 @@ export default [
   },
   {
     id: 'unlock_antiMatterSynthesis',
-    name: '反物质合成专家',
-    desc: '解锁科技：反物质合成',
+    name: '反物質合成專家',
+    desc: '解鎖科技：反物質合成',
     type: 'tech',
     tech: 'antiMatterSynthesis',
     baseReward: 20,
@@ -488,19 +488,19 @@ export default [
   },
   {
     id: 'unlock_nanoManufacturing',
-    name: '纳米制造专家',
-    desc: '解锁科技：纳米制造',
+    name: '奈米製造專家',
+    desc: '解鎖科技：奈米製造',
     type: 'tech',
     tech: 'nanoManufacturing',
     baseReward: 20,
     reward: { nanoMaterial: 10, knowledge: 10 },
     once: true
   },
-  // 熵减阶段成就
+  // 熵減階段成就
   {
     id: 'entropy_atomicOrdering',
     name: '原子排序突破',
-    desc: '完成熵减阶段：原子排序',
+    desc: '完成熵減階段：原子排序',
     type: 'entropyStage',
     entropyStage: 'atomicOrdering',
     baseReward: 50,
@@ -509,8 +509,8 @@ export default [
   },
   {
     id: 'entropy_molecularCooling',
-    name: '分子冷却突破',
-    desc: '完成熵减阶段：分子冷却',
+    name: '分子冷卻突破',
+    desc: '完成熵減階段：分子冷卻',
     type: 'entropyStage',
     entropyStage: 'molecularCooling',
     baseReward: 50,
@@ -519,8 +519,8 @@ export default [
   },
   {
     id: 'entropy_stellarExtinction',
-    name: '恒星熄灭突破',
-    desc: '完成熵减阶段：恒星熄灭',
+    name: '恆星熄滅突破',
+    desc: '完成熵減階段：恆星熄滅',
     type: 'entropyStage',
     entropyStage: 'stellarExtinction',
     baseReward: 50,
@@ -529,8 +529,8 @@ export default [
   },
   {
     id: 'entropy_blackholeDecompression',
-    name: '黑洞解压突破',
-    desc: '完成熵减阶段：黑洞解压',
+    name: '黑洞解壓突破',
+    desc: '完成熵減階段：黑洞解壓',
     type: 'entropyStage',
     entropyStage: 'blackholeDecompression',
     baseReward: 50,
@@ -539,8 +539,8 @@ export default [
   },
   {
     id: 'entropy_energyMaterialization',
-    name: '能量物质化突破',
-    desc: '完成熵减阶段：能量物质化',
+    name: '能量物質化突破',
+    desc: '完成熵減階段：能量物質化',
     type: 'entropyStage',
     entropyStage: 'energyMaterialization',
     baseReward: 50,
@@ -549,19 +549,19 @@ export default [
   },
   {
     id: 'entropy_universalUnification',
-    name: '宇宙单一化突破',
-    desc: '完成熵减阶段：宇宙单一化',
+    name: '宇宙單一化突破',
+    desc: '完成熵減階段：宇宙單一化',
     type: 'entropyStage',
     entropyStage: 'universalUnification',
     baseReward: 50,
     reward: { energy: 5000, matter: 5000, nanoMaterial: 500 },
     once: true
   },
-  // 复合条件成就
+  // 複合條件成就
   {
     id: 'compound_energy_quantumComputing',
-    name: '能量与量子',
-    desc: '拥有10.00A能量并解锁量子计算科技',
+    name: '能量與量子',
+    desc: '擁有10.00A能量並解鎖量子計算科技',
     type: 'compound',
     conditions: [
       { type: 'resource', resource: 'energy', target: 10000 },
@@ -572,8 +572,8 @@ export default [
   },
   {
     id: 'compound_darkMatter_darkMatterCollector',
-    name: '暗物质大亨',
-    desc: '拥有500.000暗物质并建造10.000个暗物质收集器',
+    name: '暗物質大亨',
+    desc: '擁有500.000暗物質並建造10.000個暗物質收集器',
     type: 'compound',
     conditions: [
       { type: 'resource', resource: 'darkMatter', target: 500 },
@@ -584,8 +584,8 @@ export default [
   },
   {
     id: 'compound_nanoFactory_nanoManufacturing',
-    name: '纳米工业先锋',
-    desc: '建造10.000个纳米工厂并解锁纳米制造科技',
+    name: '奈米工業先鋒',
+    desc: '建造10.000個奈米工廠並解鎖奈米製造科技',
     type: 'compound',
     conditions: [
       { type: 'building', building: 'nanoFactory', target: 10 },
@@ -596,8 +596,8 @@ export default [
   },
   {
     id: 'compound_blackholeDecompression_antiMatterSynthesis',
-    name: '黑洞与反物质',
-    desc: '完成黑洞解压阶段并解锁反物质合成科技',
+    name: '黑洞與反物質',
+    desc: '完成黑洞解壓階段並解鎖反物質合成科技',
     type: 'compound',
     conditions: [
       { type: 'entropyStage', entropyStage: 'blackholeDecompression' },
@@ -608,8 +608,8 @@ export default [
   },
   {
     id: 'compound_knowledge_quantumComputer_quantumComputing',
-    name: '知识量子突破',
-    desc: '拥有10.00A知识，建造5个量子计算机，并解锁量子计算科技',
+    name: '知識量子突破',
+    desc: '擁有10.00A知識，建造5個量子計算機，並解鎖量子計算科技',
     type: 'compound',
     conditions: [
       { type: 'resource', resource: 'knowledge', target: 10000 },
@@ -621,8 +621,8 @@ export default [
   },
   {
     id: 'compound_antiMatter_energyMaterialization',
-    name: '反物质能量化',
-    desc: '拥有1.00A反物质并完成能量物质化阶段',
+    name: '反物質能量化',
+    desc: '擁有1.00A反物質並完成能量物質化階段',
     type: 'compound',
     conditions: [
       { type: 'resource', resource: 'antiMatter', target: 1000 },
@@ -633,8 +633,8 @@ export default [
   },
   {
     id: 'compound_allTech_allStage',
-    name: '终极文明',
-    desc: '解锁所有科技并完成所有熵减阶段',
+    name: '終極文明',
+    desc: '解鎖所有科技並完成所有熵減階段',
     type: 'compound',
     conditions: [{ type: 'allTech' }, { type: 'allEntropyStage' }],
     reward: { energy: 10000, matter: 10000, knowledge: 5000, darkMatter: 2000, antiMatter: 1000, nanoMaterial: 1000 },

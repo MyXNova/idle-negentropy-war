@@ -2,21 +2,21 @@
   <el-card shadow="never">
     <template #header>
       <div class="card-header">
-        <span>熵减进程</span>
+        <span>熵減進程</span>
       </div>
     </template>
     <el-alert
-      title="提升熵减阶段可以解锁对应阶段的科技和建筑"
+      title="提升熵減階段可以解鎖對應階段的科技和建築"
       type="primary"
       v-if="currentEntropyStage === 'atomicOrdering'"
       style="margin-bottom: 10px"
     />
-    <!-- 当前阶段显示 -->
+    <!-- 當前階段顯示 -->
     <div class="current-stage">
-      <h4>当前阶段: {{ currentData.name }}</h4>
+      <h4>當前階段: {{ currentData.name }}</h4>
       <p class="stage-description">{{ currentData.description }}</p>
     </div>
-    <!-- 进度条 -->
+    <!-- 進度條 -->
     <div class="progress-container">
       <div class="progress-bar">
         <div class="progress-fill" :style="{ width: progressPercentage + '%' }"></div>
@@ -27,14 +27,14 @@
         }}%)
       </div>
     </div>
-    <!-- 阶段效果 -->
+    <!-- 階段效果 -->
     <div class="stage-effect">
       <strong>效果:</strong>
       {{ currentData.effect }}
     </div>
-    <!-- 资源消耗 -->
+    <!-- 資源消耗 -->
     <div class="resource-cost">
-      <strong>每次熵减消耗:</strong>
+      <strong>每次熵減消耗:</strong>
       <div class="cost-items">
         <span
           v-for="(amount, resource) in currentData.cost"
@@ -45,18 +45,18 @@
         </span>
       </div>
     </div>
-    <!-- 熵减效率 -->
+    <!-- 熵減效率 -->
     <div class="efficiency-info">
-      <strong>当前效率:</strong>
+      <strong>當前效率:</strong>
       {{ gameStore.formatNumber(currentEfficiency) }}x
       <div class="efficiency-breakdown">
-        <div>基础效率: {{ gameStore.formatNumber(currentStage.efficiency) }}x</div>
-        <div v-if="quantumBonus > 0">量子计算加成: +{{ gameStore.formatNumber(quantumBonus) }}x</div>
-        <div v-if="spacetimeBonus > 0">时空操控加成: +{{ gameStore.formatNumber(spacetimeBonus) }}x</div>
+        <div>基礎效率: {{ gameStore.formatNumber(currentStage.efficiency) }}x</div>
+        <div v-if="quantumBonus > 0">量子計算加成: +{{ gameStore.formatNumber(quantumBonus) }}x</div>
+        <div v-if="spacetimeBonus > 0">時空操控加成: +{{ gameStore.formatNumber(spacetimeBonus) }}x</div>
         <div v-if="techBonus > 1">科技效率: {{ gameStore.formatNumber(techBonus) }}x</div>
       </div>
     </div>
-    <!-- 手动熵减按钮 -->
+    <!-- 手動熵減按鈕 -->
     <el-button
       v-for="(item, index) in [1, 100, 1000]"
       :key="index"
@@ -65,11 +65,11 @@
       :disabled="!canPerformEntropyReductionBatch(item) || currentStage.progress >= currentData.maxProgress"
       class="entropy-button"
     >
-      {{ canPerformEntropyReductionBatch(item) ? `执行熵减 (×${item})` : '资源不足' }}
+      {{ canPerformEntropyReductionBatch(item) ? `執行熵減 (×${item})` : '資源不足' }}
     </el-button>
-    <!-- 所有阶段概览 -->
+    <!-- 所有階段概覽 -->
     <div class="all-stages">
-      <h4>熵减阶段</h4>
+      <h4>熵減階段</h4>
       <div class="stage-list">
         <div
           v-for="(stage, key) in entropyReductionStages"
@@ -115,22 +115,22 @@
 
   const gameStore = useGameStore()
 
-  // 当前熵减阶段
+  // 當前熵減階段
   const currentEntropyStage = computed(() => gameStore.currentEntropyStage)
-  // 熵减进程数据
+  // 熵減進程數據
   const entropyReductionStages = computed(() => gameStore.entropyReductionStages)
-  // 资源
+  // 資源
   const resources = computed(() => gameStore.resources)
-  // 当前熵减进程阶段数据
+  // 當前熵減進程階段數據
   const currentStage = computed(() => entropyReductionStages.value[currentEntropyStage.value])
-  // 本地熵减进程阶段数据
+  // 本地熵減進程階段數據
   const currentData = computed(() => entropyReductionData[gameStore.currentEntropyStage])
-  // 当前熵减阶段进度
+  // 當前熵減階段進度
   const currentProgress = computed(() => currentStage.value?.progress || 0)
   const maxProgress = computed(() => currentData.value?.maxProgress || 1)
   const progressPercentage = computed(() => (currentProgress.value / maxProgress.value) * 100)
 
-  // 效率计算
+  // 效率計算
   const currentEfficiency = computed(() => gameStore.getEntropyReductionBonus())
   const quantumBonus = computed(() => {
     const quantumComputer = gameStore.buildings.quantumComputer
@@ -145,22 +145,22 @@
     return currentTech?.efficiency || 1
   })
 
-  // 检查单个资源是否足够
+  // 檢查單個資源是否足夠
   const canAffordResource = (resource, amount) => {
     return resources.value[resource] >= amount
   }
 
-  // 获取阶段状态
+  // 獲取階段狀態
   const getStageStatus = stageKey => {
     const stage = entropyReductionStages.value[stageKey]
     if (stageKey === currentEntropyStage.value && stage.progress < entropyReductionData[stageKey].maxProgress)
-      return '进行中'
+      return '進行中'
     if (stage.progress >= entropyReductionData[stageKey].maxProgress) return '已完成'
-    if (!stage.unlocked) return '未解锁'
-    return '已解锁'
+    if (!stage.unlocked) return '未解鎖'
+    return '已解鎖'
   }
 
-  // 检查是否可以批量熵减
+  // 檢查是否可以批次熵減
   const canPerformEntropyReductionBatch = times => {
     return Object.entries(currentData.value.cost).every(
       ([resource, amount]) => resources.value[resource] >= amount * times

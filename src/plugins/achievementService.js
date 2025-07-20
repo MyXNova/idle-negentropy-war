@@ -1,7 +1,7 @@
 import achievementsData from '@/data/achievements'
 import { useGameStore } from '@/stores/gameStore'
 
-// 检查单个成就是否达成
+// 檢查單個成就是否達成
 const checkAchievement = (cfg, state, gameStore) => {
   switch (cfg.type) {
     case 'resource':
@@ -28,7 +28,7 @@ const checkAchievement = (cfg, state, gameStore) => {
   }
 }
 
-// 计算奖励
+// 計算獎勵
 const getAchievementReward = (cfg, state) => {
   if (cfg.resource && cfg.baseReward) {
     const reward = {}
@@ -40,25 +40,25 @@ const getAchievementReward = (cfg, state) => {
   return cfg.reward
 }
 
-// 领取成就奖励
+// 領取成就獎勵
 const claimAchievement = (id, gameStore) => {
   const cfg = achievementsData.find(a => a.id === id)
   const state = gameStore.achievements[id]
   if (!state.completed) return
-  // 发放奖励
+  // 發放獎勵
   const reward = getAchievementReward(cfg, state)
   Object.entries(reward).forEach(([res, val]) => {
     if (gameStore.resources[res] !== undefined) {
       gameStore.resources[res] += val
     }
   })
-  // 特殊奖励/解锁
+  // 特殊獎勵/解鎖
   if (cfg.unlock) {
     if (cfg.unlock.tech) gameStore.technologies[cfg.unlock.tech].unlocked = true
     if (cfg.unlock.building) gameStore.buildings[cfg.unlock.building].unlocked = true
   }
   if (cfg.once) state.unlocked = true
-  // 递增目标和奖励（仅支持部分类型）
+  // 遞增目標和獎勵（僅支持部分類型）
   if (cfg.type === 'resource' || cfg.type === 'building') {
     state.level++
     state.currentTarget = Math.floor(cfg.baseTarget * Math.pow(cfg.targetMultiplier, state.level))
@@ -68,7 +68,7 @@ const claimAchievement = (id, gameStore) => {
   }
 }
 
-// 检查所有成就
+// 檢查所有成就
 const checkAllAchievements = gameStore => {
   achievementsData.forEach(cfg => {
     const state = gameStore.achievements[cfg.id]

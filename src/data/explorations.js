@@ -1,9 +1,9 @@
-// 宇宙探索目标配置
+// 宇宙探索目標配置
 export default [
   {
     id: 'relic',
-    name: '宇宙遗迹',
-    desc: '发现远古文明遗迹，获得稀有知识与资源。',
+    name: '宇宙遺跡',
+    desc: '發現遠古文明遺跡，獲得稀有知識與資源。',
     cost: { energy: 1000, knowledge: 1 },
     cooldown: 600, // 秒
     commonPool: [
@@ -15,13 +15,13 @@ export default [
       { res: 'alienFragment', chance: 0.03 },
       { res: 'ancientLog', chance: 0.01 }
     ],
-    failReward: { relicShard: 1 }, // 失败必得“遗迹碎片”
+    failReward: { relicShard: 1 }, // 失敗必得“遺跡碎片”
     chance: 0.3
   },
   {
     id: 'singularity',
-    name: '时空奇点',
-    desc: '探索到时空奇点，获得能量与特殊科技碎片。',
+    name: '時空奇點',
+    desc: '探索到時空奇點，獲得能量與特殊科技碎片。',
     cost: { energy: 2000, matter: 1000 },
     cooldown: 1200,
     commonPool: [
@@ -38,7 +38,7 @@ export default [
   {
     id: 'alienTech',
     name: '外星科技',
-    desc: '获得外星文明遗留的科技，提升科技效率。',
+    desc: '獲得外星文明遺留的科技，提升科技效率。',
     cost: { energy: 1000, knowledge: 1 },
     cooldown: 1800,
     commonPool: [
@@ -52,7 +52,7 @@ export default [
   {
     id: 'specialPlanet',
     name: '特殊星球',
-    desc: '发现资源丰富的特殊星球，获得大量资源。',
+    desc: '發現資源豐富的特殊星球，獲得大量資源。',
     cost: { energy: 4000, matter: 4000 },
     cooldown: 2400,
     commonPool: [
@@ -66,8 +66,8 @@ export default [
   },
   {
     id: 'void',
-    name: '虚空探索',
-    desc: '探索虚空，可能一无所获，也可能获得意外之喜。',
+    name: '虛空探索',
+    desc: '探索虛空，可能一無所獲，也可能獲得意外之喜。',
     cost: { energy: 1000, knowledge: 1 },
     cooldown: 600,
     commonPool: [

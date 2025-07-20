@@ -2,22 +2,22 @@
   <el-card class="event-log" shadow="never">
     <template #header>
       <div class="card-header">
-        <span>当前事件</span>
+        <span>當前事件</span>
       </div>
     </template>
     <div v-if="gameStore.activeEvent" class="active-event">
       <h4>{{ gameStore.activeEvent.title }}</h4>
       <p>{{ gameStore.activeEvent.description }}</p>
-      <p>剩余时间: {{ gameStore.formatTime(gameStore.activeEvent.remaining) }}</p>
+      <p>剩餘時間: {{ gameStore.formatTime(gameStore.activeEvent.remaining) }}</p>
     </div>
     <div v-else class="active-event">
-      <p>当前暂无活跃事件</p>
+      <p>當前暫無活躍事件</p>
     </div>
   </el-card>
   <el-card class="event-log" shadow="never">
     <template #header>
       <div class="card-header">
-        <span>历史事件</span>
+        <span>歷史事件</span>
       </div>
     </template>
     <el-scrollbar :max-height="300" class="event-list">
@@ -30,7 +30,7 @@
         </div>
       </template>
       <div v-else class="active-event">
-        <p>当前暂无历史事件</p>
+        <p>當前暫無歷史事件</p>
       </div>
     </el-scrollbar>
   </el-card>
